@@ -2,13 +2,6 @@ import Image from "next/image";
 
 const proofCards = [
   {
-    src: "/images/ironman.jpg",
-    alt: "Ironman Finish",
-    label: "Ironman",
-    title: "Volle Distanz, Finisher",
-    desc: "3,8 km Schwimmen, 180 km Rad, 42 km Lauf — der ultimative Test für Vorbereitung.",
-  },
-  {
     src: "/images/schwimmen.jpg",
     alt: "Langdistanz Schwimmen Malta",
     label: "Open Water",

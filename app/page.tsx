@@ -2,6 +2,7 @@ import { Footer } from "@/components/Footer";
 import { ForWhom } from "@/components/ForWhom";
 import { Hero } from "@/components/Hero";
 import { Nav } from "@/components/Nav";
+import { Newsletter } from "@/components/Newsletter";
 import { Pillars } from "@/components/Pillars";
 import { Proof } from "@/components/Proof";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
@@ -18,6 +19,7 @@ export default function Home() {
       <Pillars />
       <Trainer />
       <Termine />
+      <Newsletter />
       <Footer />
       <RevealOnScroll />
     </>
