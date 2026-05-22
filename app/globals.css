@@ -346,10 +346,10 @@ h3 {
 
 .proof-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .proof-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 540px) {
@@ -410,6 +410,22 @@ h3 {
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.4;
 }
+
+/* Data card variant — for the WHOOP screenshot */
+.proof-card-data {
+  background: #0d1014;
+}
+.proof-card-data img {
+  object-fit: contain;
+  padding: 14px 14px 110px;
+}
+.proof-card-overlay-data {
+  background: linear-gradient(to top,
+    rgba(13, 16, 20, 0.98) 0%,
+    rgba(13, 16, 20, 0.92) 22%,
+    rgba(13, 16, 20, 0) 40%);
+}
+.proof-card-data:hover img { transform: none; }
 
 .proof-quote {
   margin-top: 60px;
@@ -621,6 +637,55 @@ h3 {
   color: var(--accent);
   margin-bottom: 16px;
 }
+
+/* ---------- Trainer inline CTA ---------- */
+.trainer-cta {
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.trainer p.trainer-cta-headline {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 0;
+}
+.trainer-cta-headline .italic {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+.trainer-cta-action {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.trainer-cta-action .btn-primary {
+  border: none;
+  cursor: pointer;
+  font-family: var(--display);
+}
+.trainer-cta-hint {
+  font-family: var(--display);
+  font-size: 13px;
+  color: var(--ink-mute);
+  letter-spacing: 0.02em;
+}
+@media (max-width: 540px) {
+  .trainer-cta-action { align-items: stretch; }
+  .trainer-cta-action .btn-primary { justify-content: center; }
+}
+
+/* Calendly popup overlay color override (in case widget.css applies brand red) */
+.calendly-overlay .calendly-popup-close { filter: invert(1); }
 
 /* ---------- Termine ---------- */
 .termine-grid {

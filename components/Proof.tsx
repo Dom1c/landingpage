@@ -22,6 +22,14 @@ const proofCards = [
     title: "10 Tage Vipassana",
     desc: "10 Tage Meditation, 10 Stunden täglich. Kein Handy, kein Reden, kein Lesen. Der mentale Anker.",
   },
+  {
+    src: "/images/whoop-hrv.png",
+    alt: "WHOOP Dashboard mit eigenen Werten: HRV 204 ms, RHR 36 bpm",
+    label: "Datenbasiert",
+    title: "Perfekte Regeneration",
+    desc: "HRV, Schlaf und Belastung täglich gemessen. Optimale Abstimmung entsteht erst, wenn du verstehst, was dein Körper wirklich braucht.",
+    variant: "data" as const,
+  },
 ] as const;
 
 export function Proof() {
@@ -39,16 +47,24 @@ export function Proof() {
         </p>
 
         <div className="proof-grid">
-          {proofCards.map((card) => (
-            <div key={card.title} className="proof-card reveal">
-              <Image src={card.src} alt={card.alt} fill sizes="280px" />
-              <div className="proof-card-overlay">
-                <div className="proof-card-label">{card.label}</div>
-                <div className="proof-card-title">{card.title}</div>
-                <div className="proof-card-desc">{card.desc}</div>
+          {proofCards.map((card) => {
+            const isData = "variant" in card && card.variant === "data";
+            return (
+              <div
+                key={card.title}
+                className={`proof-card reveal${isData ? " proof-card-data" : ""}`}
+              >
+                <Image src={card.src} alt={card.alt} fill sizes="280px" />
+                <div
+                  className={`proof-card-overlay${isData ? " proof-card-overlay-data" : ""}`}
+                >
+                  <div className="proof-card-label">{card.label}</div>
+                  <div className="proof-card-title">{card.title}</div>
+                  <div className="proof-card-desc">{card.desc}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <blockquote className="proof-quote">

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CalendlyCTA } from "./CalendlyCTA";
 
 export function Trainer() {
   return (
@@ -36,6 +37,7 @@ export function Trainer() {
               ausprobiert — am eigenen Körper, mit Daten, in echten
               Wettkämpfen.
             </p>
+            <CalendlyCTA />
           </div>
         </div>
       </div>
