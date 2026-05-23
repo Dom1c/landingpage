@@ -10,7 +10,9 @@ const termine = [
     day: "Samstag",
     date: "06.06.2026",
     time: "10:00 – 12:00 Uhr",
-    location: "Seven Apica, Braunschweig",
+    location: "Seven Apica · Hagenhof 7, Braunschweig",
+    locationHref:
+      "https://www.google.com/maps/search/?api=1&query=Seven+Apica+Hagenhof+7+Braunschweig",
     spots: "15 Plätze",
     price: "66 €",
     cta: "Verbindlich anmelden",
@@ -21,29 +23,30 @@ const termine = [
     featured: false,
     badge: "Bald",
     badgeSoft: true,
-    title: "Mindset und Wettkampfvorbereitung",
+    title: "Gruppencoaching",
+    subtitle: "Wettkampf­vorbereitung — Halbmarathon, Marathon, o. ä.",
     day: "Termin",
     date: "folgt in Kürze",
     time: "Datum tbd",
-    location: "Braunschweig",
-    spots: "Begrenzte Plätze",
-    price: "59 €",
+    location: "Braunschweig & online",
+    spots: "4–8 Plätze",
+    price: "coming soon",
     cta: "Demnächst verfügbar",
     href: "#",
     ghost: true,
   },
   {
     featured: false,
-    badge: "Bald",
+    badge: "Auf Anfrage",
     badgeSoft: true,
-    title: "Lauftechnik Praxiskurs",
-    day: "Termin",
-    date: "folgt in Kürze",
-    time: "Datum tbd",
-    location: "Braunschweig",
-    spots: "Begrenzte Plätze",
-    price: "59 €",
-    cta: "Demnächst verfügbar",
+    title: "Impulsvorträge",
+    day: "Format",
+    date: "auf Anfrage",
+    time: "Dauer nach Absprache",
+    location: "Braunschweig & Region",
+    spots: "Vortrag · individuell",
+    price: "coming soon",
+    cta: "Auf Anfrage",
     href: "#",
     ghost: true,
   },
@@ -63,11 +66,14 @@ export function Termine() {
           style={{
             color: "var(--ink-soft)",
             fontSize: 18,
-            maxWidth: 600,
+            maxWidth: 720,
             marginTop: -20,
           }}
         >
-          Bezahlung direkt online über Stripe. Bestätigung kommt per Mail.
+          Seminare und Coaching für Läufer aus Braunschweig, Wolfenbüttel,
+          Salzgitter, Wolfsburg, Gifhorn und der Region Hannover — Vorbereitung
+          u. a. auf Braunschweiger Nachtlauf, Lauftage, Marathon Hannover,
+          Halbmarathon und deinen ersten 10er.
         </p>
 
         <div className="termine-grid">
@@ -82,6 +88,9 @@ export function Termine() {
                 {termin.badge}
               </div>
               <div className="termin-title">{termin.title}</div>
+              {"subtitle" in termin && termin.subtitle ? (
+                <div className="termin-subtitle">{termin.subtitle}</div>
+              ) : null}
               <div>
                 <div className="termin-day">{termin.day}</div>
                 <div className="termin-date">{termin.date}</div>
@@ -93,7 +102,18 @@ export function Termine() {
                 </div>
                 <div className="termin-meta-row">
                   <PinIcon />
-                  {termin.location}
+                  {"locationHref" in termin && termin.locationHref ? (
+                    <a
+                      href={termin.locationHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="termin-location-link"
+                    >
+                      {termin.location}
+                    </a>
+                  ) : (
+                    termin.location
+                  )}
                 </div>
                 <div className="termin-meta-row">
                   <UsersIcon />
@@ -101,8 +121,16 @@ export function Termine() {
                 </div>
               </div>
               <div className="termin-price">
-                <span className="price-amount">{termin.price}</span>
-                <span className="price-vat">inkl. MwSt.</span>
+                <span
+                  className={`price-amount${
+                    termin.price.includes("€") ? "" : " price-amount-soft"
+                  }`}
+                >
+                  {termin.price}
+                </span>
+                {termin.price.includes("€") && (
+                  <span className="price-vat">inkl. MwSt.</span>
+                )}
               </div>
               {termin.ghost ? (
                 <span className="termin-cta ghost">{termin.cta}</span>

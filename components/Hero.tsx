@@ -10,7 +10,6 @@ export function Hero() {
       <div className="wrap">
         <div className="hero-grid">
           <div>
-            <span className="eyebrow">Halbtags-Seminar · Präsenz</span>
             <h1>
               Lauf <span className="italic">schneller</span>,
               <br />

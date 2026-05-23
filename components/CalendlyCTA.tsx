@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef } from "react";
 
 const CALENDLY_URL = "https://calendly.com/dominicthormann";
 
@@ -14,7 +14,6 @@ declare global {
 }
 
 export function CalendlyCTA() {
-  const [loaded, setLoaded] = useState(false);
   const pendingOpen = useRef(false);
 
   const openCalendly = useCallback(() => {
@@ -36,7 +35,6 @@ export function CalendlyCTA() {
         src="https://assets.calendly.com/assets/external/widget.js"
         strategy="lazyOnload"
         onLoad={() => {
-          setLoaded(true);
           if (pendingOpen.current && window.Calendly) {
             pendingOpen.current = false;
             window.Calendly.initPopupWidget({ url: CALENDLY_URL });
@@ -71,11 +69,6 @@ export function CalendlyCTA() {
               <polyline points="12 5 19 12 12 19" />
             </svg>
           </button>
-          <span className="trainer-cta-hint">
-            {loaded
-              ? "Öffnet direkt hier im Fenster."
-              : "Calendly · ca. 15 Minuten"}
-          </span>
         </div>
       </div>
     </>

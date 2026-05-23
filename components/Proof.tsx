@@ -9,6 +9,13 @@ const proofCards = [
     desc: "6 Stunden Schwimmen in Malta. Was möglich ist, wenn der Körper richtig vorbereitet ist.",
   },
   {
+    src: "/images/marathon.jpg",
+    alt: "Dominic Thormann beim ADAC Marathon Hannover, 3:29:35",
+    label: "Wettkampf",
+    title: "5 Marathons",
+    desc: "Mit jeder Distanz feiner abgestimmt. So vorbereitet, dass das Event nicht zum Kampf wird — sondern zum Highlight, an das du dich lächelnd erinnerst.",
+  },
+  {
     src: "/images/fasten.jpg",
     alt: "8 Tage Fasten",
     label: "Stoffwechsel",
@@ -29,13 +36,6 @@ const proofCards = [
     title: "Perfekte Regeneration",
     desc: "HRV, Schlaf und Belastung täglich gemessen. Optimale Abstimmung entsteht erst, wenn du verstehst, was dein Körper wirklich braucht.",
     variant: "data" as const,
-  },
-  {
-    src: "/images/marathon.jpg",
-    alt: "Dominic Thormann beim ADAC Marathon Hannover, 3:29:35",
-    label: "Wettkampf",
-    title: "5 Marathons",
-    desc: "Mit jeder Distanz feiner abgestimmt. So vorbereitet, dass das Event nicht zum Kampf wird — sondern zum Highlight, an das du dich lächelnd erinnerst.",
   },
   {
     src: "/images/bali.jpeg",
