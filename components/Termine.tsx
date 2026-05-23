@@ -4,7 +4,7 @@ import { ClockIcon, PinIcon, UsersIcon } from "./icons";
 const termine = [
   {
     featured: true,
-    badge: "Nächster Termin",
+    badge: "",
     badgeSoft: false,
     title: "Training, Ernährung und Recovery für Läufer",
     day: "Samstag",
@@ -16,7 +16,7 @@ const termine = [
     spots: "15 Plätze",
     price: "66 €",
     cta: "Verbindlich anmelden",
-    href: "https://buy.stripe.com/REPLACE_LINK",
+    href: "https://buy.stripe.com/00w4gyeNe7xncsM9WedAk01",
     ghost: false,
   },
   {
@@ -82,11 +82,13 @@ export function Termine() {
               key={termin.title}
               className={`termin-card${termin.featured ? " featured" : ""}`}
             >
-              <div
-                className={`termin-badge${termin.badgeSoft ? " soft" : ""}`}
-              >
-                {termin.badge}
-              </div>
+              {termin.badge && (
+                <div
+                  className={`termin-badge${termin.badgeSoft ? " soft" : ""}`}
+                >
+                  {termin.badge}
+                </div>
+              )}
               <div className="termin-title">{termin.title}</div>
               {"subtitle" in termin && termin.subtitle ? (
                 <div className="termin-subtitle">{termin.subtitle}</div>
