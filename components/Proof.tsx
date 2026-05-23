@@ -50,25 +50,31 @@ export function Proof() {
   return (
     <section className="proof">
       <div className="wrap">
-        <div className="section-eyebrow">Nicht nur Theorie</div>
-        <h2>
+        <div className="section-eyebrow reveal-up">Nicht nur Theorie</div>
+        <h2 className="reveal-up">
           Ich habe es <span className="italic">selbst gemacht.</span>
         </h2>
-        <p className="proof-intro">
+        <p className="proof-intro reveal-up">
           Bevor ich etwas weitergebe, probiere ich es am eigenen Körper. Sechs
           Stationen, die mir gezeigt haben, wozu der Körper mit der richtigen
           Vorbereitung fähig ist.
         </p>
 
-        <div className="proof-grid">
+        <div className="proof-grid" data-stagger>
           {proofCards.map((card) => {
             const isData = "variant" in card && card.variant === "data";
             return (
               <div
                 key={card.title}
-                className={`proof-card reveal${isData ? " proof-card-data" : ""}`}
+                className={`proof-card reveal-up${isData ? " proof-card-data" : ""}`}
               >
-                <Image src={card.src} alt={card.alt} fill sizes="280px" />
+                <Image
+                  src={card.src}
+                  alt={card.alt}
+                  fill
+                  sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 400px"
+                  loading="lazy"
+                />
                 <div
                   className={`proof-card-overlay${isData ? " proof-card-overlay-data" : ""}`}
                 >
@@ -81,7 +87,7 @@ export function Proof() {
           })}
         </div>
 
-        <blockquote className="proof-quote">
+        <blockquote className="proof-quote reveal-up">
           &ldquo;Was du als Hobby-Läufer brauchst, ist nicht mehr Wissen aus
           Büchern. Du brauchst Wissen, das jemand ausprobiert hat — und versteht,
           was im Körper wirklich passiert.&rdquo;

@@ -6,16 +6,17 @@ export function Trainer() {
     <section id="trainer" className="trainer">
       <div className="wrap">
         <div className="trainer-grid">
-          <div className="trainer-img-wrap reveal">
+          <div className="trainer-img-wrap reveal-right">
             <Image
               src="/images/coach Dom.jpeg"
               alt="Dominic Thormann"
               fill
-              sizes="(max-width: 900px) 100vw, 40vw"
+              sizes="(max-width: 900px) 100vw, 480px"
+              loading="lazy"
               style={{ objectFit: "cover" }}
             />
           </div>
-          <div className="reveal">
+          <div className="reveal-left">
             <div className="trainer-tagline">Dein Trainer</div>
             <h2 className="trainer-name">Dominic Thormann.</h2>
             <p>

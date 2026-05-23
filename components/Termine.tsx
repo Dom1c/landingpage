@@ -56,13 +56,14 @@ export function Termine() {
   return (
     <section id="termine">
       <div className="wrap">
-        <div className="section-eyebrow">Termine</div>
-        <h2>
+        <div className="section-eyebrow reveal-up">Termine</div>
+        <h2 className="reveal-up">
           Die nächsten
           <br />
           <span className="italic">Termine.</span>
         </h2>
         <p
+          className="reveal-up"
           style={{
             color: "var(--ink-soft)",
             fontSize: 18,
@@ -76,11 +77,11 @@ export function Termine() {
           Halbmarathon und deinen ersten 10er.
         </p>
 
-        <div className="termine-grid">
+        <div className="termine-grid" data-stagger>
           {termine.map((termin) => (
             <div
               key={termin.title}
-              className={`termin-card${termin.featured ? " featured" : ""}`}
+              className={`termin-card reveal-up${termin.featured ? " featured" : ""}`}
             >
               {termin.badge && (
                 <div

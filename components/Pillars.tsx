@@ -41,16 +41,16 @@ export function Pillars() {
   return (
     <section id="inhalte">
       <div className="wrap">
-        <div className="section-eyebrow">Die 3 Säulen</div>
-        <h2>
+        <div className="section-eyebrow reveal-up">Die 3 Säulen</div>
+        <h2 className="reveal-up">
           Drei Bereiche.
           <br />
           <span className="italic">Ein Ziel: nachhaltige Leistung.</span>
         </h2>
 
-        <div className="pillars-grid">
+        <div className="pillars-grid" data-stagger>
           {pillars.map((pillar) => (
-            <div key={pillar.num} className="pillar reveal">
+            <div key={pillar.num} className="pillar reveal-up">
               <div className="pillar-num">{pillar.num}</div>
               <h3>{pillar.title}</h3>
               <p>{pillar.description}</p>

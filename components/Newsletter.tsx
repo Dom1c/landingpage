@@ -38,7 +38,7 @@ export function Newsletter() {
   return (
     <section className="newsletter">
       <div className="wrap">
-        <div className="newsletter-card">
+        <div className="newsletter-card reveal-scale">
           <div className="newsletter-text">
             <div className="section-eyebrow">Warteliste</div>
             <h2>

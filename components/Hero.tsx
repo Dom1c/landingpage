@@ -38,8 +38,9 @@ export function Hero() {
               src="/images/ironman.jpg"
               alt="Dominic Thormann beim Ironman-Finish"
               fill
-              sizes="(max-width: 900px) 100vw, 45vw"
+              sizes="(max-width: 900px) 100vw, 540px"
               priority
+              fetchPriority="high"
               style={{ objectFit: "cover", objectPosition: "center 20%" }}
             />
             <div className="hero-photo-badge">

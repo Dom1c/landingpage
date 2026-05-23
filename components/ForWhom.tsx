@@ -12,17 +12,17 @@ export function ForWhom() {
       <div className="wrap">
         <div className="two-col">
           <div>
-            <div className="section-eyebrow">Für wen</div>
-            <h2>
+            <div className="section-eyebrow reveal-up">Für wen</div>
+            <h2 className="reveal-up">
               Du läufst gern.
               <br />
               <span className="italic">Aber dir fehlt Struktur.</span>
             </h2>
           </div>
           <div>
-            <ul className="checklist reveal">
+            <ul className="checklist" data-stagger>
               {checklistItems.map((item) => (
-                <li key={item}>
+                <li key={item} className="reveal-left">
                   <span className="check-mark">✓</span> {item}
                 </li>
               ))}
