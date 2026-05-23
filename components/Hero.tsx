@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "./icons";
+import { IronmanDetails } from "./IronmanDetails";
 
 export function Hero() {
   return (
@@ -47,27 +48,10 @@ export function Hero() {
               <div className="b-text">
                 3,8 km Schwimmen · 180 km Rad · 42 km Laufen
               </div>
+              <IronmanDetails />
             </div>
           </div>
 
-          <div className="hero-meta">
-            <div className="meta-item">
-              <span className="meta-label">Dauer</span>
-              <span className="meta-value">2 Stunden</span>
-            </div>
-            <div className="meta-item">
-              <span className="meta-label">Gruppe</span>
-              <span className="meta-value">10–15 Personen</span>
-            </div>
-            <div className="meta-item">
-              <span className="meta-label">Level</span>
-              <span className="meta-value">Einsteiger & Hobby</span>
-            </div>
-            <div className="meta-item">
-              <span className="meta-label">Sprache</span>
-              <span className="meta-value">Deutsch</span>
-            </div>
-          </div>
         </div>
       </div>
     </header>

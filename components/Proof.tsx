@@ -10,10 +10,10 @@ const proofCards = [
   },
   {
     src: "/images/fasten.jpg",
-    alt: "7 Tage Fasten",
+    alt: "8 Tage Fasten",
     label: "Stoffwechsel",
-    title: "7 Tage Fasten",
-    desc: "Eine Woche komplett ohne Nahrung. Den Körper auf Fettverbrennung umstellen — am eigenen Leib verstanden.",
+    title: "8 Tage Fasten",
+    desc: "Acht Tage komplett ohne Nahrung. Den Körper auf Fettverbrennung umstellen — am eigenen Leib verstanden.",
   },
   {
     src: "/images/vipassana.jpg",
@@ -30,6 +30,20 @@ const proofCards = [
     desc: "HRV, Schlaf und Belastung täglich gemessen. Optimale Abstimmung entsteht erst, wenn du verstehst, was dein Körper wirklich braucht.",
     variant: "data" as const,
   },
+  {
+    src: "/images/marathon.jpg",
+    alt: "Dominic Thormann beim ADAC Marathon Hannover, 3:29:35",
+    label: "Wettkampf",
+    title: "5 Marathons",
+    desc: "Mit jeder Distanz feiner abgestimmt. So vorbereitet, dass das Event nicht zum Kampf wird — sondern zum Highlight, an das du dich lächelnd erinnerst.",
+  },
+  {
+    src: "/images/bali.jpeg",
+    alt: "Auslandssemester auf Bali — traditionelle Zeremonie",
+    label: "Naturverbundenheit",
+    title: "Auslandssemester Bali",
+    desc: "Auf Bali gelernt, im Einklang mit der Natur und mit mir selbst zu leben. Eine andere Art, den eigenen Körper und Rhythmus zu verstehen.",
+  },
 ] as const;
 
 export function Proof() {
@@ -41,8 +55,8 @@ export function Proof() {
           Ich habe es <span className="italic">selbst gemacht.</span>
         </h2>
         <p className="proof-intro">
-          Bevor ich etwas weitergebe, probiere ich es am eigenen Körper. Vier
-          Erfahrungen, die mir gezeigt haben, wozu der Körper mit der richtigen
+          Bevor ich etwas weitergebe, probiere ich es am eigenen Körper. Sechs
+          Stationen, die mir gezeigt haben, wozu der Körper mit der richtigen
           Vorbereitung fähig ist.
         </p>
 
