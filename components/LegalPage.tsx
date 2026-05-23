@@ -1,13 +1,15 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 type LegalPageProps = {
   title: string;
+  children: ReactNode;
 };
 
-export function LegalPage({ title }: LegalPageProps) {
+export function LegalPage({ title, children }: LegalPageProps) {
   return (
-    <main style={{ padding: "140px 0 80px" }}>
-      <div className="wrap">
+    <main style={{ padding: "140px 0 100px" }}>
+      <div className="wrap" style={{ maxWidth: 760 }}>
         <Link
           href="/"
           style={{
@@ -21,11 +23,16 @@ export function LegalPage({ title }: LegalPageProps) {
         >
           ← Zurück zur Startseite
         </Link>
-        <h1 style={{ marginBottom: 24 }}>{title}</h1>
-        <p style={{ color: "var(--ink-soft)", maxWidth: 640, fontSize: 18 }}>
-          Diese Seite ist noch ein Platzhalter. Bitte füge hier den vollständigen
-          rechtlichen Text ein.
-        </p>
+        <h1
+          style={{
+            fontSize: "clamp(36px, 5vw, 56px)",
+            marginBottom: 40,
+            animation: "none",
+          }}
+        >
+          {title}
+        </h1>
+        <div className="legal-content">{children}</div>
       </div>
     </main>
   );

@@ -15,11 +15,35 @@ const interTight = Inter_Tight({
   weight: ["400", "500", "600", "700"],
 });
 
+const title =
+  "Training, Ernährung & Wettkampfvorbereitung für Läufer — mit Dominic Thormann";
+const description =
+  "Halbtags-Seminar für Hobby-Läufer mit Ironman-Finisher Dominic Thormann. Training, Ernährung und Wettkampfvorbereitung — praxisnah und ehrlich.";
+const ogImage = "/images/coach-dom-og.jpeg";
+
 export const metadata: Metadata = {
-  title:
-    "Training, Ernährung & Wettkampfvorbereitung für Läufer — mit Dominic Thormann",
-  description:
-    "Halbtags-Seminar für Hobby-Läufer mit Ironman-Finisher Dominic Thormann. Training, Ernährung und Wettkampfvorbereitung — praxisnah und ehrlich.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    locale: "de_DE",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Dominic Thormann",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [ogImage],
+  },
 };
 
 export default function RootLayout({
