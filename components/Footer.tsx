@@ -18,13 +18,13 @@ export function Footer() {
             <h4>Links</h4>
             <ul>
               <li>
-                <Link href="#inhalte">Inhalte</Link>
+                <Link href="/#inhalte">Inhalte</Link>
               </li>
               <li>
-                <Link href="#trainer">Trainer</Link>
+                <Link href="/#trainer">Trainer</Link>
               </li>
               <li>
-                <Link href="#termine">Termine</Link>
+                <Link href="/#termine">Termine</Link>
               </li>
             </ul>
           </div>
