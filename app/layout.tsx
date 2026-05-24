@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter_Tight, Newsreader } from "next/font/google";
 import "./globals.css";
+import { TiltActivator } from "@/components/TiltActivator";
 
 const newsreader = Newsreader({
   subsets: ["latin"],
@@ -53,7 +54,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className={`${newsreader.variable} ${interTight.variable}`}>
-      <body className={interTight.className}>{children}</body>
+      <body className={interTight.className}>
+        {children}
+        <TiltActivator />
+      </body>
     </html>
   );
 }

@@ -252,11 +252,11 @@ h1 .italic {
   opacity: 0;
   background: radial-gradient(
     circle at var(--glare-x, 50%) var(--glare-y, 50%),
-    rgba(255, 255, 255, 0.35) 0%,
-    rgba(255, 255, 255, 0.08) 30%,
-    rgba(255, 255, 255, 0) 60%
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.18) 28%,
+    rgba(255, 255, 255, 0) 55%
   );
-  mix-blend-mode: overlay;
+  mix-blend-mode: soft-light;
   transition: opacity 0.5s ease-out;
   border-radius: inherit;
 }
@@ -266,6 +266,39 @@ h1 .italic {
 @media (prefers-reduced-motion: reduce) {
   .tilt-image__inner { transform: none !important; }
   .tilt-image__glare { display: none; }
+}
+
+/* iOS permission activator */
+.tilt-activator {
+  position: fixed;
+  bottom: calc(env(safe-area-inset-bottom, 0) + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: rgba(26, 26, 24, 0.92);
+  color: #fff;
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 8px 30px rgba(26, 26, 24, 0.25);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  animation: tiltActivatorIn 0.4s ease-out 1.2s both;
+}
+.tilt-activator__icon {
+  color: var(--accent-soft, #c5a572);
+  font-size: 16px;
+}
+@keyframes tiltActivatorIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 .hero-photo-badge {
   position: absolute;

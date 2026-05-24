@@ -5,8 +5,17 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 type OrientationHandler = (event: DeviceOrientationEvent) => void;
 
 const handlers = new Set<OrientationHandler>();
+const stateListeners = new Set<(s: PermissionState) => void>();
 let initialized = false;
 let listening = false;
+let permissionState: PermissionState = "unknown";
+
+type PermissionState = "unknown" | "needs-tap" | "granted" | "denied";
+
+function setPermissionState(s: PermissionState) {
+  permissionState = s;
+  stateListeners.forEach((fn) => fn(s));
+}
 
 function dispatch(event: DeviceOrientationEvent) {
   handlers.forEach((h) => h(event));
@@ -16,34 +25,58 @@ function startListening() {
   if (listening) return;
   listening = true;
   window.addEventListener("deviceorientation", dispatch);
+  setPermissionState("granted");
+}
+
+type DOEWithPermission = typeof DeviceOrientationEvent & {
+  requestPermission?: () => Promise<"granted" | "denied">;
+};
+
+function getDOE(): DOEWithPermission | undefined {
+  return (window as unknown as { DeviceOrientationEvent?: DOEWithPermission })
+    .DeviceOrientationEvent;
+}
+
+export function requestTiltPermission() {
+  const DOE = getDOE();
+  if (!DOE) return;
+  if (typeof DOE.requestPermission !== "function") {
+    startListening();
+    return;
+  }
+  DOE.requestPermission()
+    .then((res) => {
+      if (res === "granted") startListening();
+      else setPermissionState("denied");
+    })
+    .catch(() => setPermissionState("denied"));
 }
 
 function initOrientation() {
   if (initialized) return;
   initialized = true;
 
-  const DOE = (
-    window as unknown as {
-      DeviceOrientationEvent?: typeof DeviceOrientationEvent & {
-        requestPermission?: () => Promise<"granted" | "denied">;
-      };
-    }
-  ).DeviceOrientationEvent;
-
+  const DOE = getDOE();
   if (!DOE) return;
 
   if (typeof DOE.requestPermission === "function") {
-    const requestOnce = () => {
+    setPermissionState("needs-tap");
+    const tryRequest = () => {
+      if (permissionState === "granted") return;
       DOE.requestPermission!()
         .then((res) => {
-          if (res === "granted") startListening();
+          if (res === "granted") {
+            startListening();
+            window.removeEventListener("touchstart", tryRequest);
+            window.removeEventListener("click", tryRequest);
+          } else {
+            setPermissionState("denied");
+          }
         })
-        .catch(() => {});
+        .catch(() => setPermissionState("denied"));
     };
-    window.addEventListener("touchstart", requestOnce, {
-      once: true,
-      passive: true,
-    });
+    window.addEventListener("touchstart", tryRequest, { passive: true });
+    window.addEventListener("click", tryRequest);
   } else {
     startListening();
   }
@@ -57,16 +90,32 @@ function register(handler: OrientationHandler) {
   };
 }
 
+export function subscribePermissionState(
+  fn: (s: PermissionState) => void
+): () => void {
+  stateListeners.add(fn);
+  fn(permissionState);
+  return () => {
+    stateListeners.delete(fn);
+  };
+}
+
 interface TiltImageProps {
   children: ReactNode;
   className?: string;
   maxTilt?: number;
+  /** lower = more sensitive (degrees of phone tilt for max effect) */
+  sensitivity?: number;
+  /** px of translate at max tilt for added depth */
+  parallax?: number;
 }
 
 export function TiltImage({
   children,
   className = "",
-  maxTilt = 8,
+  maxTilt = 18,
+  sensitivity = 18,
+  parallax = 12,
 }: TiltImageProps) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
@@ -93,13 +142,18 @@ export function TiltImage({
     let firstReading = true;
 
     const animate = () => {
-      currentX += (targetX - currentX) * 0.12;
-      currentY += (targetY - currentY) * 0.12;
-      currentGlareX += (glareX - currentGlareX) * 0.12;
-      currentGlareY += (glareY - currentGlareY) * 0.12;
+      currentX += (targetX - currentX) * 0.15;
+      currentY += (targetY - currentY) * 0.15;
+      currentGlareX += (glareX - currentGlareX) * 0.15;
+      currentGlareY += (glareY - currentGlareY) * 0.15;
+
+      const tx = (currentY / maxTilt) * parallax;
+      const ty = (-currentX / maxTilt) * parallax;
 
       if (innerRef.current) {
-        innerRef.current.style.transform = `rotateX(${currentX.toFixed(
+        innerRef.current.style.transform = `translate3d(${tx.toFixed(
+          2
+        )}px, ${ty.toFixed(2)}px, 0) rotateX(${currentX.toFixed(
           2
         )}deg) rotateY(${currentY.toFixed(2)}deg)`;
       }
@@ -129,10 +183,10 @@ export function TiltImage({
       const dBeta = e.beta - (baseBeta ?? 0);
       const dGamma = e.gamma - (baseGamma ?? 0);
       const clamp = (v: number) => Math.max(-maxTilt, Math.min(maxTilt, v));
-      targetX = clamp((dBeta / 30) * -maxTilt);
-      targetY = clamp((dGamma / 30) * maxTilt);
-      glareX = 50 + (targetY / maxTilt) * 35;
-      glareY = 50 - (targetX / maxTilt) * 35;
+      targetX = clamp((dBeta / sensitivity) * -maxTilt);
+      targetY = clamp((dGamma / sensitivity) * maxTilt);
+      glareX = 50 + (targetY / maxTilt) * 45;
+      glareY = 50 - (targetX / maxTilt) * 45;
     };
 
     const unregister = register(onOrientation);
@@ -141,7 +195,7 @@ export function TiltImage({
       unregister();
       if (rafId !== null) cancelAnimationFrame(rafId);
     };
-  }, [maxTilt]);
+  }, [maxTilt, sensitivity, parallax]);
 
   return (
     <div
