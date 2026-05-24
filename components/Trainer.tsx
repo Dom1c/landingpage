@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { CalendlyCTA } from "./CalendlyCTA";
-import { TiltImage } from "./TiltImage";
+import { ParallaxImage } from "./ParallaxImage";
 
 export function Trainer() {
   return (
@@ -8,7 +8,7 @@ export function Trainer() {
       <div className="wrap">
         <div className="trainer-grid">
           <div className="trainer-img-wrap reveal-right">
-            <TiltImage>
+            <ParallaxImage>
               <Image
                 src="/images/coach Dom.jpeg"
                 alt="Dominic Thormann"
@@ -17,7 +17,7 @@ export function Trainer() {
                 loading="lazy"
                 style={{ objectFit: "cover" }}
               />
-            </TiltImage>
+            </ParallaxImage>
           </div>
           <div className="reveal-left">
             <div className="trainer-tagline">Dein Trainer</div>

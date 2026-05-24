@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "./icons";
 import { IronmanDetails } from "./IronmanDetails";
-import { TiltImage } from "./TiltImage";
+import { ParallaxImage } from "./ParallaxImage";
 
 export function Hero() {
   return (
@@ -35,7 +35,7 @@ export function Hero() {
           </div>
 
           <div className="hero-photo">
-            <TiltImage>
+            <ParallaxImage>
               <Image
                 src="/images/ironman.jpg"
                 alt="Dominic Thormann beim Ironman-Finish"
@@ -45,7 +45,7 @@ export function Hero() {
                 fetchPriority="high"
                 style={{ objectFit: "cover", objectPosition: "center 20%" }}
               />
-            </TiltImage>
+            </ParallaxImage>
             <div className="hero-photo-badge">
               <div className="b-label">Ironman Finisher · 10:56:46</div>
               <div className="b-text">
