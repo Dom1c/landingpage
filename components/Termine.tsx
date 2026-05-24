@@ -24,7 +24,7 @@ const termine = [
     badge: "Bald",
     badgeSoft: true,
     title: "Gruppencoaching",
-    subtitle: "Wettkampf­vorbereitung — Halbmarathon, Marathon, o. ä.",
+    subtitle: "Wettkampf­vorbereitung: Halbmarathon, Marathon, o. ä.",
     day: "Termin",
     date: "folgt in Kürze",
     time: "Datum tbd",
@@ -58,9 +58,7 @@ export function Termine() {
       <div className="wrap">
         <div className="section-eyebrow reveal-up">Termine</div>
         <h2 className="reveal-up">
-          Die nächsten
-          <br />
-          <span className="italic">Termine.</span>
+          Die nächsten <span className="italic">Termine.</span>
         </h2>
         <p
           className="reveal-up"
@@ -72,7 +70,7 @@ export function Termine() {
           }}
         >
           Seminare und Coaching für Läufer aus Braunschweig, Wolfenbüttel,
-          Salzgitter, Wolfsburg, Gifhorn und der Region Hannover — Vorbereitung
+          Salzgitter, Wolfsburg, Gifhorn und der Region Hannover. Vorbereitung
           u. a. auf Braunschweiger Nachtlauf, Lauftage, Marathon Hannover,
           Halbmarathon und deinen ersten 10er.
         </p>

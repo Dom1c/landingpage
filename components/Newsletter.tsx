@@ -45,7 +45,7 @@ export function Newsletter() {
               Verpass keinen <span className="italic">Termin.</span>
             </h2>
             <p>
-              Trag dich ein und erhalte Infos zu neuen Kursen und Seminaren —
+              Trag dich ein und erhalte Infos zu neuen Kursen und Seminaren,
               sobald die Termine stehen. Kein Spam, keine Weitergabe.
             </p>
           </div>
@@ -54,7 +54,7 @@ export function Newsletter() {
             <div className="newsletter-success">
               <strong>Fast geschafft.</strong>
               <span>
-                Schau in dein Postfach — du musst die Anmeldung per E-Mail
+                Schau in dein Postfach, du musst die Anmeldung per E-Mail
                 bestätigen.
               </span>
             </div>

@@ -229,6 +229,44 @@ h1 .italic {
 .hero-photo img {
   width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
 }
+
+/* Tilt image (mobile gyroscope effect) */
+.tilt-image {
+  position: absolute;
+  inset: 0;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+.tilt-image__inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+  will-change: transform;
+  border-radius: inherit;
+}
+.tilt-image__glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.08) 30%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  mix-blend-mode: overlay;
+  transition: opacity 0.5s ease-out;
+  border-radius: inherit;
+}
+.tilt-image--active .tilt-image__glare {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tilt-image__inner { transform: none !important; }
+  .tilt-image__glare { display: none; }
+}
 .hero-photo-badge {
   position: absolute;
   bottom: 24px;

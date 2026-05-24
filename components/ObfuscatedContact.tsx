@@ -39,7 +39,7 @@ export function ObfuscatedContact({ variant = "block" }: Props) {
           fontSize: 15,
         }}
       >
-        [Kontaktdaten werden geladen — bitte JavaScript aktivieren]
+        [Kontaktdaten werden geladen, bitte JavaScript aktivieren]
       </span>
     );
   }

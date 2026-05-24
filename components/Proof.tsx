@@ -13,14 +13,14 @@ const proofCards = [
     alt: "Dominic Thormann beim ADAC Marathon Hannover, 3:29:35",
     label: "Wettkampf",
     title: "5 Marathons",
-    desc: "Mit jeder Distanz feiner abgestimmt. So vorbereitet, dass das Event nicht zum Kampf wird — sondern zum Highlight, an das du dich lächelnd erinnerst.",
+    desc: "Mit jeder Distanz feiner abgestimmt. So vorbereitet, dass das Event nicht zum Kampf wird, sondern zum Highlight, an das du dich lächelnd erinnerst.",
   },
   {
     src: "/images/fasten.jpg",
     alt: "8 Tage Fasten",
     label: "Stoffwechsel",
     title: "8 Tage Fasten",
-    desc: "Acht Tage komplett ohne Nahrung. Den Körper auf Fettverbrennung umstellen — am eigenen Leib verstanden.",
+    desc: "Acht Tage komplett ohne Nahrung. Den Körper auf Fettverbrennung umstellen, am eigenen Leib verstanden.",
   },
   {
     src: "/images/vipassana.jpg",
@@ -39,7 +39,7 @@ const proofCards = [
   },
   {
     src: "/images/bali.jpeg",
-    alt: "Auslandssemester auf Bali — traditionelle Zeremonie",
+    alt: "Auslandssemester auf Bali, traditionelle Zeremonie",
     label: "Naturverbundenheit",
     title: "Auslandssemester Bali",
     desc: "Auf Bali gelernt, im Einklang mit der Natur und mit mir selbst zu leben. Eine andere Art, den eigenen Körper und Rhythmus zu verstehen.",
@@ -89,9 +89,9 @@ export function Proof() {
 
         <blockquote className="proof-quote reveal-up">
           &ldquo;Was du als Hobby-Läufer brauchst, ist nicht mehr Wissen aus
-          Büchern. Du brauchst Wissen, das jemand ausprobiert hat — und versteht,
+          Büchern. Du brauchst Wissen, das jemand ausprobiert hat und versteht,
           was im Körper wirklich passiert.&rdquo;
-          <span className="proof-quote-author">— Dominic Thormann</span>
+          <span className="proof-quote-author">Dominic Thormann</span>
         </blockquote>
       </div>
     </section>

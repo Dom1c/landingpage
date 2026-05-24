@@ -3,7 +3,7 @@ import { LegalPage, LegalSection } from "@/components/LegalPage";
 import { ObfuscatedContact } from "@/components/ObfuscatedContact";
 
 export const metadata: Metadata = {
-  title: "Datenschutz — Dominic Thormann",
+  title: "Datenschutz | Dominic Thormann",
   robots: { index: false, follow: false },
 };
 
@@ -55,7 +55,7 @@ export default function DatenschutzPage() {
           ein, die für den Betrieb der Seite erforderlich sind. Eine
           Einwilligung ist hierfür nicht erforderlich (§ 25 Abs. 2 Nr. 2
           TDDDG). Drittanbieter wie Calendly oder Stripe können beim Aufruf der
-          jeweiligen Funktion eigene Cookies setzen — siehe dazu die folgenden
+          jeweiligen Funktion eigene Cookies setzen. Siehe dazu die folgenden
           Abschnitte.
         </p>
       </LegalSection>

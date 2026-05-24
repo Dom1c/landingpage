@@ -9,6 +9,8 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { Termine } from "@/components/Termine";
 import { Trainer } from "@/components/Trainer";
 
+const NEWSLETTER_ENABLED = false;
+
 export default function Home() {
   return (
     <>
@@ -19,7 +21,7 @@ export default function Home() {
       <Pillars />
       <Trainer />
       <Termine />
-      <Newsletter />
+      {NEWSLETTER_ENABLED && <Newsletter />}
       <Footer />
       <RevealOnScroll />
     </>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CalendlyCTA } from "./CalendlyCTA";
+import { TiltImage } from "./TiltImage";
 
 export function Trainer() {
   return (
@@ -7,14 +8,16 @@ export function Trainer() {
       <div className="wrap">
         <div className="trainer-grid">
           <div className="trainer-img-wrap reveal-right">
-            <Image
-              src="/images/coach Dom.jpeg"
-              alt="Dominic Thormann"
-              fill
-              sizes="(max-width: 900px) 100vw, 480px"
-              loading="lazy"
-              style={{ objectFit: "cover" }}
-            />
+            <TiltImage>
+              <Image
+                src="/images/coach Dom.jpeg"
+                alt="Dominic Thormann"
+                fill
+                sizes="(max-width: 900px) 100vw, 480px"
+                loading="lazy"
+                style={{ objectFit: "cover" }}
+              />
+            </TiltImage>
           </div>
           <div className="reveal-left">
             <div className="trainer-tagline">Dein Trainer</div>
@@ -22,7 +25,7 @@ export function Trainer() {
             <p>
               Ironman-Finisher, Langdistanz-Schwimmer,
               Meditations-Praktizierender. Aber vor allem: jemand, der seinen
-              Körper über viele Jahre kennengelernt hat — mit allen Höhen,
+              Körper über viele Jahre kennengelernt hat, mit allen Höhen,
               Tiefen und Lehren.
             </p>
             <p>
@@ -35,7 +38,7 @@ export function Trainer() {
             </p>
             <p>
               Was ich vermittle, habe ich nicht aus Büchern. Ich habe es
-              ausprobiert — am eigenen Körper, mit Daten, in echten
+              ausprobiert: am eigenen Körper, mit Daten, in echten
               Wettkämpfen.
             </p>
             <CalendlyCTA />

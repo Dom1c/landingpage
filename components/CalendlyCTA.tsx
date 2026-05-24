@@ -44,7 +44,7 @@ export function CalendlyCTA() {
 
       <div id="gespraech" className="trainer-cta">
         <p className="trainer-cta-headline">
-          <span className="italic">Finde heraus,</span> wie ich dir helfen kann.
+          <span className="italic">Finde heraus,</span> wie ich dich unterstützen kann.
         </p>
         <div className="trainer-cta-action">
           <button

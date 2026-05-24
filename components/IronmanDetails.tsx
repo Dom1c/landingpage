@@ -31,7 +31,7 @@ export function IronmanDetails() {
       className="ironman-modal"
       role="dialog"
       aria-modal="true"
-      aria-label="Ironman Hamburg 2024 — Finisher Urkunde"
+      aria-label="Ironman Hamburg 2024, Finisher-Urkunde"
       onClick={() => setOpen(false)}
     >
       <button

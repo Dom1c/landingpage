@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "./icons";
 import { IronmanDetails } from "./IronmanDetails";
+import { TiltImage } from "./TiltImage";
 
 export function Hero() {
   return (
@@ -19,7 +20,7 @@ export function Hero() {
             </h1>
             <p className="hero-sub">
               Training, Ernährung und Wettkampfvorbereitung für Hobby-Läufer.
-              Praxisnah, ehrlich, ohne 1.000-Kilometer-pro-Woche-Mythen — mit
+              Praxisnah, ehrlich, ohne 1.000-Kilometer-pro-Woche-Mythen, mit
               Ironman-Finisher Dominic Thormann.
             </p>
             <div className="hero-cta-row">
@@ -34,15 +35,17 @@ export function Hero() {
           </div>
 
           <div className="hero-photo">
-            <Image
-              src="/images/ironman.jpg"
-              alt="Dominic Thormann beim Ironman-Finish"
-              fill
-              sizes="(max-width: 900px) 100vw, 540px"
-              priority
-              fetchPriority="high"
-              style={{ objectFit: "cover", objectPosition: "center 20%" }}
-            />
+            <TiltImage>
+              <Image
+                src="/images/ironman.jpg"
+                alt="Dominic Thormann beim Ironman-Finish"
+                fill
+                sizes="(max-width: 900px) 100vw, 540px"
+                priority
+                fetchPriority="high"
+                style={{ objectFit: "cover", objectPosition: "center 20%" }}
+              />
+            </TiltImage>
             <div className="hero-photo-badge">
               <div className="b-label">Ironman Finisher · 10:56:46</div>
               <div className="b-text">

@@ -7,7 +7,7 @@ import {
 import { ObfuscatedContact } from "@/components/ObfuscatedContact";
 
 export const metadata: Metadata = {
-  title: "AGB — Dominic Thormann",
+  title: "AGB | Dominic Thormann",
   robots: { index: false, follow: false },
 };
 
@@ -79,8 +79,8 @@ export default function AgbPage() {
         <LegalSubsection title="Muster-Widerrufsformular">
           <p>
             Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über die
-            folgende Dienstleistung: [Seminarbezeichnung, Datum] — bestellt am
-            [Datum] — Name, Anschrift, Datum, Unterschrift (nur bei Mitteilung
+            folgende Dienstleistung: [Seminarbezeichnung, Datum], bestellt am
+            [Datum]. Name, Anschrift, Datum, Unterschrift (nur bei Mitteilung
             auf Papier).
           </p>
         </LegalSubsection>
@@ -150,7 +150,7 @@ export default function AgbPage() {
         <p>
           Alle im Rahmen der Seminare ausgegebenen Unterlagen, Texte, Folien
           und Materialien sind urheberrechtlich geschützt. Eine Weitergabe,
-          Vervielfältigung oder Veröffentlichung — auch auszugsweise — bedarf
+          Vervielfältigung oder Veröffentlichung, auch auszugsweise, bedarf
           der vorherigen schriftlichen Zustimmung des Anbieters.
         </p>
       </LegalSection>

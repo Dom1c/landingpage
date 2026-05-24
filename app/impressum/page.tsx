@@ -3,7 +3,7 @@ import { LegalPage, LegalSection } from "@/components/LegalPage";
 import { ObfuscatedContact } from "@/components/ObfuscatedContact";
 
 export const metadata: Metadata = {
-  title: "Impressum — Dominic Thormann",
+  title: "Impressum | Dominic Thormann",
   robots: { index: false, follow: false },
 };
 
