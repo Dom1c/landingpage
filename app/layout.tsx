@@ -24,6 +24,10 @@ const ogImage = "/images/coach-dom-og.jpeg";
 export const metadata: Metadata = {
   title,
   description,
+  icons: {
+    icon: [{ url: "/images/favicon.png", type: "image/png" }],
+    apple: [{ url: "/images/favicon.png" }],
+  },
   openGraph: {
     title,
     description,
