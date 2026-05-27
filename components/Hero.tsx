@@ -19,9 +19,10 @@ export function Hero() {
               <span className="italic">nachhaltiger.</span>
             </h1>
             <p className="hero-sub">
-              Training, Ernährung und Wettkampfvorbereitung für Hobby-Läufer.
-              Praxisnah, ehrlich, ohne 1.000-Kilometer-pro-Woche-Mythen, mit
-              Ironman-Finisher Dominic Thormann.
+              Training, Ernährung und Wettkampfvorbereitung für Hobby- und
+              ambitionierte Läufer. Praxisnah, ehrlich, ohne
+              1.000-Kilometer-pro-Woche-Mythen, mit Ironman-Finisher Dominic
+              Thormann.
             </p>
             <div className="hero-cta-row">
               <Link href="#termine" className="btn-primary">

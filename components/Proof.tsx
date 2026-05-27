@@ -88,9 +88,9 @@ export function Proof() {
         </div>
 
         <blockquote className="proof-quote reveal-up">
-          &ldquo;Was du als Hobby-Läufer brauchst, ist nicht mehr Wissen aus
-          Büchern. Du brauchst Wissen, das jemand ausprobiert hat und versteht,
-          was im Körper wirklich passiert.&rdquo;
+          &ldquo;Was du als ambitionierter Läufer brauchst, ist nicht mehr
+          Wissen aus Büchern. Du brauchst Wissen, das jemand ausprobiert hat
+          und versteht, was im Körper wirklich passiert.&rdquo;
           <span className="proof-quote-author">Dominic Thormann</span>
         </blockquote>
       </div>

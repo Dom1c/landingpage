@@ -8,7 +8,7 @@ export function Trainer() {
       <div className="wrap">
         <div className="trainer-grid">
           <div className="trainer-img-wrap reveal-right">
-            <ParallaxImage>
+            <ParallaxImage strength={0.06}>
               <Image
                 src="/images/coach Dom.jpeg"
                 alt="Dominic Thormann"
@@ -20,7 +20,7 @@ export function Trainer() {
             </ParallaxImage>
           </div>
           <div className="reveal-left">
-            <div className="trainer-tagline">Dein Trainer</div>
+            <div className="trainer-tagline">Dein Coach &amp; Mentor</div>
             <h2 className="trainer-name">Dominic Thormann.</h2>
             <p>
               Ironman-Finisher, Langdistanz-Schwimmer,
@@ -32,14 +32,13 @@ export function Trainer() {
               Ich war als Ironman zu verbissen und habe dabei die Balance
               verloren. Aus dieser Erfahrung ist das hier entstanden: ein
               Seminar, das genau das weitergibt, was ich gern früher gewusst
-              hätte. Wie der Körper wirklich tickt. Wann mehr eben weniger ist.
-              Und warum Recovery oft den größeren Hebel hat als ein weiterer
-              harter Trainingstag.
+              hätte. Wie der Körper wirklich tickt. Und warum Recovery oft den
+              größeren Hebel hat als ein weiterer harter Trainingstag.
             </p>
             <p>
-              Was ich vermittle, habe ich nicht aus Büchern. Ich habe es
-              ausprobiert: am eigenen Körper, mit Daten, in echten
-              Wettkämpfen.
+              Was ich vermittle, kommt aus{" "}
+              <span className="italic">persönlicher Erfahrung</span>. Am
+              eigenen Körper, mit Daten, in echten Wettkämpfen.
             </p>
             <CalendlyCTA />
           </div>

@@ -10,8 +10,8 @@ export function Footer() {
               Dominic<span>·</span>Thormann
             </div>
             <p className="footer-tagline">
-              Training, Ernährung & Wettkampfvorbereitung für Hobby-Läufer.
-              Praxisnah, ehrlich, ohne Bullshit.
+              Training, Ernährung & Wettkampfvorbereitung für Hobby- und
+              ambitionierte Läufer. Praxisnah, ehrlich, ohne Bullshit.
             </p>
           </div>
           <div className="footer-col">

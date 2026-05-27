@@ -71,8 +71,9 @@ export function Termine() {
         >
           Seminare und Coaching für Läufer aus Braunschweig, Wolfenbüttel,
           Salzgitter, Wolfsburg, Gifhorn und der Region Hannover. Vorbereitung
-          u. a. auf Braunschweiger Nachtlauf, Lauftage, Marathon Hannover,
-          Halbmarathon und deinen ersten 10er.
+          auf Events wie Braunschweiger Nachtlauf, Lauftage, Marathon Hannover
+          oder Halbmarathon, egal ob es dein erster Wettkampf wird oder du
+          eine neue persönliche Bestzeit erreichen willst.
         </p>
 
         <div className="termine-grid" data-stagger>
@@ -129,9 +130,6 @@ export function Termine() {
                 >
                   {termin.price}
                 </span>
-                {termin.price.includes("€") && (
-                  <span className="price-vat">inkl. MwSt.</span>
-                )}
               </div>
               {termin.ghost ? (
                 <span className="termin-cta ghost">{termin.cta}</span>

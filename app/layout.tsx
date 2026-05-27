@@ -18,7 +18,7 @@ const interTight = Inter_Tight({
 const title =
   "Training, Ernährung & Wettkampfvorbereitung für Läufer mit Dominic Thormann";
 const description =
-  "Halbtags-Seminar für Hobby-Läufer mit Ironman-Finisher Dominic Thormann. Training, Ernährung und Wettkampfvorbereitung, praxisnah und ehrlich.";
+  "Halbtags-Seminar für Hobby- und ambitionierte Läufer mit Ironman-Finisher Dominic Thormann. Training, Ernährung und Wettkampfvorbereitung, praxisnah und ehrlich.";
 const ogImage = "/images/coach-dom-og.jpeg";
 
 export const metadata: Metadata = {
